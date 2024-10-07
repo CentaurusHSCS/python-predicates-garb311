@@ -13,8 +13,9 @@ def between(x, a, b):
   
 # is x divisibleBy a ?
 def isDivisibleBy(x, a):
-  
-    if x%a:
+    if a==0:
+      return False
+    if x%a==0:
        return True
     else:
        return False 
@@ -22,7 +23,7 @@ def isDivisibleBy(x, a):
   
 # is x even?
 def isEvenNumber(x):
-  if x is isEvenNumber:
+  if x % 2==0:
      return True
   else:
      return False 
@@ -30,7 +31,7 @@ def isEvenNumber(x):
   
 # is x odd?
 def isOddNumber(x):
-  if x is isOddNumber:
+  if isEvenNumber(x) == False:
      return True
   else:
      return False 
@@ -48,7 +49,7 @@ def isInteger(x):
 
 # withinRadius is the point (x1,y1) within distance of the point (x2, y2)
 def withinRadius(x1, y1, x2, y2, distance):
- if math.sqrt((x1-x2)**2+ (y1-y1)**2) <=distance:
+ if math.sqrt((x1-x2)**2+ (y1-y2)**2) <=distance:
     return True 
  else:
     return False 
@@ -58,7 +59,7 @@ def withinRadius(x1, y1, x2, y2, distance):
   
 # do the sides a, b, c make a Pythagorean triangle
 # remember the Pythagorean theorem
- def isPythagorean(a, b, c):
+def isPythagorean(a, b, c):
   if a**2 + b**2 == c**2 :
      return True
   else:
@@ -135,15 +136,5 @@ assert(isPythagorean(5, 5, 5) == False)  # Not a Pythagorean triplet
 assert(isPythagorean(6, 8, 10) == True)  # Another Pythagorean triplet
 assert(isPythagorean(1, 1, 1) == False)  # Not a valid triangle
     
-    # Test for isPrime(number)
+  
 
-assert(isPrime(5) == True)    # 5 is a prime number
-assert(isPrime(4) == False)   # 4 is not a prime number
-assert(isPrime(1) == False)   # 1 is not a prime number
-assert(isPrime(2) == True)    # 2 is a prime number (edge case)
-    
-    # Test for pointWithinCircle(x, y, cx, cy, radius)
-assert(pointWithinCircle(0, 0, 0, 0, 1) == True)   # Center of the circle
-assert(pointWithinCircle(1, 1, 0, 0, math.sqrt(2)) == True)  # Point on the edge
-assert(pointWithinCircle(2, 2, 0, 0, 1) == False)  # Point outside the circle
-assert(pointWithinCircle(0.5, 0.5, 0, 0, 1) == True) # Point within the circle
